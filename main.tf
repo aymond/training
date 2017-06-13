@@ -30,7 +30,7 @@ terraform {
 }
 
 variable "num_webs" {
-  default = "2"
+  default = "3"
 }
 
 variable "aws_access_key" {
@@ -64,7 +64,7 @@ resource "aws_instance" "web" {
   instance_type          = "${var.instance_type}"
   subnet_id              = "subnet-9a479ed3"
   vpc_security_group_ids = ["sg-00100979"]
-  count                  = 2
+  count                  = "${var.num_webs}"
 
   tags {
     "Identity"    = "hdays-michel-elk"

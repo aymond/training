@@ -23,7 +23,7 @@
 #   command = "echo Goodbye World"
 #}
 
-terraform {
+terraform 
   backend "atlas" {
     name = "aymon/training"
   }
